@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="github.hotstu.ezuniplugin.base" >
+    <application>
+        <provider
+            android:name=".InitHook"
+            android:authorities="${applicationId}.InitHook"
+            android:exported="false"
+            android:multiprocess="true" />
+    </application>
+</manifest>

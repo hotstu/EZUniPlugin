@@ -1,0 +1,17 @@
+include ':app'
+include ':annotation'
+include ':compiler'
+include ':base'
+
+rootProject.name = "EZUniPlugin"
+
+def includeModules(String path, List<String> moduleNames) {
+    for (int i = 0; i < moduleNames.size(); i++) {
+        include(':' + moduleNames[i]);
+        project(':' + moduleNames[i]).projectDir = new File(path + moduleNames[i])
+    }
+}
+def modules = [
+        'uniplugin_module','uniplugin_component','uniplugin_richalert'
+]
+includeModules('examples/', modules)
