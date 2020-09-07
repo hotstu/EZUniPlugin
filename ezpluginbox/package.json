@@ -1,0 +1,34 @@
+{
+  "name": "ezpluginbox",
+  "id": "ezpluginbox",
+  "version": "1.0.0",
+  "description": "uniapp零配置插件开发解决方案",
+  "_dp_type": "nativeplugin",
+  "_dp_nativeplugin": {
+    "android": {
+      "plugins": [
+        {
+          "type": "module",
+          "name": "ezpluginbox",
+          "class": "tora.tora.tora"
+        }
+      ],
+      "integrateType": "aar",
+      "dependencies": [
+        "com.google.code.gson:gson:2.2.4",
+        "com.squareup.okhttp3:okhttp:3.10.0",
+        "github.hotstu.ezuniplugin:base:1.0.0",
+        "github.hotstu.ezuniplugin:annotation:1.0.0"
+      ],
+      "compileOptions": {
+        "sourceCompatibility": "1.8",
+        "targetCompatibility": "1.8"
+      },
+      "abis": [
+        "armeabi-v7a"
+      ],
+      "minSdkVersion": "19",
+      "parameters": {}
+    }
+  }
+}

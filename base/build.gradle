@@ -28,4 +28,6 @@ dependencies {
     implementation project(':annotation')
 }
 
+apply from: '../deployBintray.gradle'
+
 

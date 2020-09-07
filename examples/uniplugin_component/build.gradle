@@ -38,8 +38,6 @@ dependencies {
     compileOnly "com.android.support:recyclerview-v7:$SUPPORT_VERSION"
     compileOnly "com.android.support:support-v4:$SUPPORT_VERSION"
     compileOnly "com.android.support:appcompat-v7:$SUPPORT_VERSION"
-    implementation 'com.alibaba:fastjson:1.1.46.android'
-    implementation 'com.facebook.fresco:fresco:0.12.0'
     compileOnly project(':annotation')
     compileOnly project(':base')
     annotationProcessor project(':compiler')

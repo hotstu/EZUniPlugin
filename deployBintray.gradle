@@ -1,0 +1,45 @@
+apply plugin: 'com.jfrog.bintray'
+
+if (!bintray_user) {
+    //需要将bintary账户信息配置在~/.gradle.properties中
+    print("add your bintray_user & bintray_key first!!")
+    return
+}
+
+def properties = new Properties()
+properties.load(new FileInputStream(rootProject.file('project.properties')))
+
+project.ext {
+    mavGitUrl =  properties.getProperty("project.gitUrl")
+    mavProjectName = properties.getProperty("project.name")
+    mavLibraryLicenses = ["Apache-2.0":'http://www.apache.org/licenses/LICENSE-2.0.txt']
+    mavLibraryDescription = properties.getProperty("project.desc")
+    mavPublishToMavenLocal = true
+    mavSiteUrl = properties.getProperty("project.siteUrl")
+}
+
+
+bintray {
+    user = "${bintray_user}"
+    key = "${bintray_key}"
+    publications = ['mavenPublish']
+    configurations = ['archives']
+    override = true
+    pkg {
+        repo = properties.getProperty("project.repo")
+        name = properties.getProperty("project.name")
+        websiteUrl = properties.getProperty("project.siteUrl")
+        vcsUrl = properties.getProperty("project.gitUrl")
+        description = properties.getProperty("project.desc")
+        publicDownloadNumbers = true
+        licenses = ['Apache-2.0']
+//        version {
+//            name = project.version
+//            desc = "${project.name}-v-${project.version}"
+//            released = new Date()
+//            //vcsTag = project.version
+//        }
+    }
+}
+
+apply from: rootProject.file('gradle-mavenizer.gradle')

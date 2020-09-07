@@ -16,3 +16,5 @@ tasks.withType(Javadoc) {
     options.encoding = "UTF-8"
     options.charSet = "UTF-8"
 }
+
+apply from: '../deployBintray.gradle'

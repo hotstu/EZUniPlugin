@@ -39,6 +39,7 @@ public class ExportServiceProcessor extends AbstractProcessor {
 
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
+        System.out.println("=================");
         Set<? extends Element> elements = roundEnv.getElementsAnnotatedWith(ModuleEntry.class);
         List<String> lists = new ArrayList<>();
         for (Element element : elements) {

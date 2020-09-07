@@ -2,7 +2,8 @@ apply plugin: 'java-library'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.squareup:javapoet:1.8.0'
+    implementation 'com.squareup:javapoet:1.10.0'
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc2'
     implementation 'com.google.auto.service:auto-service:1.0-rc2'
     implementation project(':annotation')
 }
@@ -18,3 +19,5 @@ tasks.withType(Javadoc) {
     options.encoding = "UTF-8"
     options.charSet = "UTF-8"
 }
+
+apply from: '../deployBintray.gradle'
