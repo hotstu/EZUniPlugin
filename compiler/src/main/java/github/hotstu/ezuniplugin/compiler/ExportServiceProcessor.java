@@ -28,6 +28,7 @@ import github.hotstu.ezuniplugin.annotation.ModuleEntry;
 @AutoService(Processor.class)
 public class ExportServiceProcessor extends AbstractProcessor {
     private Elements elementUtils;
+
     @Override
     public Set<String> getSupportedAnnotationTypes() {
         // 规定需要处理的注解
@@ -39,7 +40,6 @@ public class ExportServiceProcessor extends AbstractProcessor {
 
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-        System.out.println("=================");
         Set<? extends Element> elements = roundEnv.getElementsAnnotatedWith(ModuleEntry.class);
         List<String> lists = new ArrayList<>();
         for (Element element : elements) {
@@ -50,7 +50,7 @@ public class ExportServiceProcessor extends AbstractProcessor {
         if (lists.size() > 0) {
             OutputStream outputStream = null;
             try {
-                FileObject resource = processingEnv.getFiler().createResource(StandardLocation.CLASS_OUTPUT, "","META-INF/services/github.hotstu.ezuniplugin.base.ILoader");
+                FileObject resource = processingEnv.getFiler().createResource(StandardLocation.CLASS_OUTPUT, "", "META-INF/services/github.hotstu.ezuniplugin.base.ILoader");
                 outputStream = resource.openOutputStream();
                 BufferedWriter outputStreamWriter = new BufferedWriter(new OutputStreamWriter(outputStream));
                 for (int i = 0; i < lists.size(); i++) {
