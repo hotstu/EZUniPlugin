@@ -38,7 +38,7 @@ dependencies {
     compileOnly "com.android.support:recyclerview-v7:$SUPPORT_VERSION"
     compileOnly "com.android.support:support-v4:$SUPPORT_VERSION"
     compileOnly "com.android.support:appcompat-v7:$SUPPORT_VERSION"
-    compileOnly project(':annotation')
-    compileOnly project(':base')
-    annotationProcessor project(':compiler')
+    compileOnly 'github.hotstu.ezuniplugin:annotation:1.0.0'
+    compileOnly 'github.hotstu.ezuniplugin:base:1.0.0'
+    annotationProcessor 'github.hotstu.ezuniplugin:compiler:1.0.0'
 }
