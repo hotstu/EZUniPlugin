@@ -42,6 +42,9 @@ public class TestStartup extends SimpleLoader {
 
 
 
+[原理讲解](https://juejin.im/post/6872262566869991437)
+
+
 *本项目由专业Android开发者开发并维护
 
 ## more about me
